@@ -1,81 +1,78 @@
 # CourseHub - Online Learning Platform
 
-A React-based course management application with Firebase integration for real-time updates, authentication, and data storage.
+CourseHub is a React-based online learning platform that enables users to browse, enroll, and track courses with real-time updates. The application integrates Firebase for authentication, database management, and storage.
+
+## Live Demo
+
+Experience the live website here: [CourseHub](https://coursehub-sagar.netlify.app/)
 
 ## Features
 
-- Browse and search available courses
-- View detailed course information
-- User authentication (register/login)
-- Enroll in courses
-- Track course progress in student dashboard
-- Real-time updates for course likes and enrollment status
+- **Course listing**: Browse and search for available courses.
+- **Course details page**: Access comprehensive course information.
+- **User Authentication**: Register/Login using Firebase Authentication.
+- **Enrollment System**: Enroll in courses with a single click.
+- **Student Dashboard**: Track progress and manage enrolled courses.
+- **Real-time Updates**:
+  - Instant course likes updates across all users.
+  - Real-time enrollment status.
+  - Synchronized course progress across devices.
 
 ## Tech Stack
 
-- React.js with React Router
-- Redux Toolkit for state management
-- Firebase (Authentication, Firestore, Storage)
-- Tailwind CSS for styling
-- Lucide React for icons
+- **Frontend**: React.js with React Router
+- **State Management**: Redux Toolkit
+- **Backend & Database**: Firebase (Authentication, Firestore, Storage)
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
 
-## Running the Application
+## Installation and Setup
 
 ### Prerequisites
 
+Ensure you have the following installed:
+
 - Node.js (v14 or higher)
 - npm or yarn
-- A Firebase account with Firestore enabled
+- Firebase account with Firestore enabled
 
 ### Setup Instructions
 
-1. Clone the repository
-2. Install dependencies:
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/07sagarsaha/CourseHub
+   cd coursehub
    ```
+2. Create a `.env` file in the root directory and add Firebase configuration:
+   ```sh
+   VITE_FIREBASE_API_KEY="YOUR_API_KEY"
+   VITE_FIREBASE_AUTH_DOMAIN="YOUR_AUTH_DOMAIN"
+   VITE_FIREBASE_PROJECT_ID="YOUR_PROJECT_ID"
+   VITE_FIREBASE_STORAGE_BUCKET="YOUR_STORAGE_BUCKET"
+   VITE_FIREBASE_MESSAGING_SENDER_ID="YOUR_MESSAGING_SENDER_ID"
+   VITE_FIREBASE_APP_ID="YOUR_APP_ID"
+   VITE_FIREBASE_MEASUREMENT_ID="YOUR_MEASUREMENT_ID"
+   ```
+3. Install dependencies:
+   ```sh
    npm install
    ```
-3. Start the development server:
-   ```
+4. Start the development server:
+   ```sh
    npm run dev
    ```
-4. Open your browser and navigate to the URL shown in the terminal (typically http://localhost:5173)
+5. Open the browser and visit `http://localhost:5173`.
 
-### First-time Setup
+## Authentication Guide
 
-When you first run the application, you'll need to seed the database with sample courses:
+- **Register** a new account from the navigation bar.
+- **Automatic login** after registration.
+- **Logout** using the navigation bar button.
+- **Re-login** anytime via the login page.
 
-1. Navigate to the homepage
-2. If no courses are displayed, click the "Seed Sample Courses" button
-3. Wait for the confirmation message that courses have been added
-4. The courses should appear automatically due to real-time listeners
+## Course Enrollment Process
 
-### Authentication
-
-- You can register a new account using the "Register" button in the navigation bar
-- After registering, you'll be automatically logged in
-- You can log out using the "Logout" button in the navigation bar
-- To log back in, use the "Login" button and enter your credentials
-
-### Course Enrollment
-
-1. Browse courses on the homepage
-2. Click on a course to view its details
-3. Click the "Enroll Now" button to enroll in a course
-4. View your enrolled courses in the dashboard
-
-### Real-time Updates
-
-The application uses Firebase's real-time listeners to provide instant updates:
-
-- Course likes update in real-time across all clients
-- Enrollment status changes are reflected immediately
-- Course progress updates are synchronized across devices
-
-## Project Structure
-
-- `/src/components` - Reusable UI components such as CourseCard, CourseList, EnrolledCourseCard, Loader, Navbar, and ProtectedRoute. These components are used to build the user interface of the application.
-- `/src/pages` - Page components for different routes such as HomePage, CourseDetailsPage, DashboardPage, LoginPage, NotFoundPage, and RegisterPage. These components represent the different pages of the application.
-- `/src/redux` - Redux store, slices, and actions for managing the application's state. Includes the store configuration and slices for authentication and courses.
-- `/src/firebase` - Firebase configuration and utilities for connecting to Firebase services such as Authentication, Firestore, and Storage.
-- `/src/utils` - Helper functions and utilities such as seedData for seeding the database with sample courses.
-- `/src/hooks` - Custom React hooks such as useCourseLikes for handling course likes.
+1. Browse available courses.
+2. Click a course to view details.
+3. Enroll using the **"Enroll Now"** button.
+4. Access enrolled courses from the student dashboard.
